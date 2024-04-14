@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {   /* pseudoclasse para que ela possa ser aplicada globalmente em seu documento html. Podemos criar muitas variáveis para elementos que se repetem muito. */      
+    --cor-primaria: #1F2544;
+    --cor-secundaria: #FFD0EC;
+    --cor-terciaria: #81689D;
+    --cor-hover: #474F7A;
+
+    --fonte-principal: "Krona One", sans-serif;
+    --fonte-secundaria: "Montserrat", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* height: 100vh; /usar 100% da tela*/
+    box-sizing: border-box; /* tudo vai ficar dentro do limite da tela*/
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 15%;  /* 1° superior/ 2° direita/ 3° inferior/ 4° esquerda */
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+.apresentacao {            /* sempre que for utilizar o flex box, colocar "display: flex;" no elemento pai. */
+    padding: 5% 15%;          /* os comandos do flex box podem ser encontrados na internet. */
+    display: flex;    /* por padrão já alinha os itens horizontalmente no modo "row". */
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.apresentacao__conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;   /* modo "column */
+    gap: 40px; /* a propriedade "gap" não é exclusiva do flex box, mas é quase sempre utilizada em conjunto com ele. Utilizada para criar espaçamento igual entre os elementos. */
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 2.25rem;                        /* 1rem = 16px */
+    font-family: var(--fonte-principal);
+}
+
+.titulo-destaque {
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+}
+
+.apresentacao__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.apresentacao__links__subtitulo {
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao__links__navegacao {
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid var(--cor-terciaria);   /* "solid" significa que a borda é sólida. */
+    width: 50%;   /* largura */
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 21.5px 0; /* utilizando padding apenas para a vertical. O primeiro valor sempre é para a vertical e o segundo para a horizontal. Colocar "0" quando não quiser alterar. */
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-secundaria);
+}
+
+.apresentacao__links__navegacao:hover {  /* estilizar a cor de fundo do botão quando passa o mouse em cima. */
+    background-color: var(--cor-hover);
+}
+
+.apresentacao__imagem {
+    width: 50%;
+}
+
+.rodape {
+    padding: 24px;
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+}
+
+@media (max-width: 1200px) {     /* utilizando o Media Queries para mudar a característica da página quando a largura atingir 1200px */
+    .cabecalho {
+        padding: 10%;
+    }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse;
+        padding: 5%;
+        
+    }
+
+    .apresentacao__conteudo {
+        width: auto;
+    }
+
+}
+
